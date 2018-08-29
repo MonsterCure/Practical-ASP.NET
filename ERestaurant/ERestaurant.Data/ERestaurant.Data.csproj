@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Item.cs" />
-    <Compile Include="Model\ItemStatus.cs" />
+    <Compile Include="Model\OrderStatus.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\MenuType.cs" />
     <Compile Include="Model\Order.cs" />
