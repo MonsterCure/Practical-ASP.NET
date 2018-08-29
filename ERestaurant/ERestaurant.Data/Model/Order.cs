@@ -42,7 +42,7 @@ namespace ERestaurant.Data.Model
 
         public string Comment { get; set; }
 
-        public ItemStatus ItemStatus { get; set; }
+        public OrderStatus OrderStatus { get; set; }
 
         public virtual List<Item> OrderItems { get; set; }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ERestaurant.Data.Model
 {
-    enum ItemStatus
+    enum OrderStatus
     {
         Processing = 1,
 
