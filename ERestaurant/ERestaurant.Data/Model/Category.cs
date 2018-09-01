@@ -1,17 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ERestaurant.Data.Model
 {
-    class Category
+    public class Category
     {
+        [Key]
         public int CategoryId { get; set; }
 
+        [Required]
+        [MaxLength(200)]
         public string CategoryName { get; set; }
 
         public int MenuId { get; set; }
+
+        public Menu Menu { get; set; }
+
+        public List<Item> ListItems { get; set; }
     }
 }

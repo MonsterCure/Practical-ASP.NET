@@ -1,24 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ERestaurant.Data.Model
 {
-    class OrderItem
+    public class OrderItem
     {
-        [ForeignKey("Order")]
+        [Key]
+        public int OrderItemId { get; set; }
+
         public int OrderId { get; set; }
 
-        public virtual Order Order { get; set; }
+        public Order Order { get; set; }
 
-        [ForeignKey("Item")]
         public int ItemId { get; set; }
 
-        public virtual Item Item { get; set; }
+        public Item Item { get; set; }
 
-        public int ItemQuantity { get; set; }
+        [Required]
+        public short ItemQuantity { get; set; }
 
         //public ItemStatus ItemStatus { get; set; } // here if ItemStatus or OrderStatus, or in Order if OrderStatus
     }

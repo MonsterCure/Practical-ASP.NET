@@ -4,18 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ERestaurant.Data.Model
+namespace ERestaurant.BL.Model
 {
-    enum MenuType
+    public enum MenuType
     {
+        Undefined = 0,
+
         Meals = 1,
 
         Drinks = 2,
 
-        Wines = 3,
-
-        Other = 4,
-
-        Unspecified = 0
+        Wines = 3
     }
 }

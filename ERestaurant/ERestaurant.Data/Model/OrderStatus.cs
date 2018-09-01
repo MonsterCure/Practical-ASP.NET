@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace ERestaurant.Data.Model
 {
-    enum OrderStatus
+    public enum OrderStatus
     {
+        Unsuccessful = 0,
+
         Processing = 1,
 
         Accepted = 2, //Created
@@ -18,8 +20,6 @@ namespace ERestaurant.Data.Model
 
         BeingDelivered = 5,
 
-        Delivered = 6,
-
-        Unsuccessful = 0
+        Delivered = 6
     }
 }
