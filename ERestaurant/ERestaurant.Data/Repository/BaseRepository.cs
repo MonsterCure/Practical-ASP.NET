@@ -10,7 +10,7 @@ namespace ERestaurant.Data.Repository
     {
         private readonly RestaurantContext _dbContext;
 
-        public RestaurantContext DbContext => _dbContext; //wrapper property
+        public RestaurantContext DbContext => _dbContext; //wrapper/auto property
 
         public BaseRepository()
         {

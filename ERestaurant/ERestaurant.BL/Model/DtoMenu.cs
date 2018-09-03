@@ -18,6 +18,7 @@ namespace ERestaurant.BL.Model
         {
             MenuId = menu.MenuId;
             TypeEnum = (MenuType)menu.TypeId;
+            RestaurantName = menu.RestaurantName;
         }
 
         public int MenuId { get; set; }

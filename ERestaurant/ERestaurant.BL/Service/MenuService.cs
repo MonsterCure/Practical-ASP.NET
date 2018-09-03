@@ -11,6 +11,13 @@ namespace ERestaurant.BL.Service
 {
     public class MenuService : BaseService<MenuRepository>, IService<DtoMenu>
     {
+        //private readonly CategoryRepository _categoryRepository;
+
+        //public MenuService()
+        //{
+        //    _categoryRepository = new CategoryRepository();
+        //}
+
         public ServiceResult<DtoMenu> Add(DtoMenu item)
         {
             try
@@ -140,6 +147,14 @@ namespace ERestaurant.BL.Service
                     Exception = ex,
                     ErrorMessage = ex.Message
                 };
+            }
+        }
+
+        public void AddCategory(int menuId, int categoryId)
+        {
+            if(Repository.GetById(menuId) != null)
+            {
+
             }
         }
     }
