@@ -1,2 +1,2 @@
 # Practical-ASP.NET
-ASP.NET MVC practice.
+This is a project for the Practical ASP.NET module at SEDC 2017/2018.
