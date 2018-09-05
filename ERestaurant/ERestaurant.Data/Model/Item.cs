@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ERestaurant.Data.Model
 {
@@ -29,6 +24,7 @@ namespace ERestaurant.Data.Model
         public bool ItemAvailability { get; set; }
 
         [Required]
+        //[ForeignKey("Category")] //not necessary because the two properties are named the same, and EF recognizes which is the navigation property
         public int CategoryId { get; set; }
 
         public Category Category { get; set; }

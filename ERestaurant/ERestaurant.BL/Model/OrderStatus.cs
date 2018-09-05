@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ERestaurant.BL.Model
+﻿namespace ERestaurant.BL.Model
 {
-    class OrderStatus
+    public enum OrderStatus
     {
+        Undefined = 0,
+
+        Created = 1,
+
+        InProgress = 2,
+
+        Prepared = 3,
+
+        Delivered = 4
     }
 }

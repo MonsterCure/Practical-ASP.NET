@@ -1,10 +1,7 @@
 ﻿using ERestaurant.Data.Model;
-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ERestaurant.Data.Repository
 {
@@ -12,9 +9,15 @@ namespace ERestaurant.Data.Repository
     {
         public Item Create(Item item)
         {
-            DbContext.Items.Add(item);
-            DbContext.SaveChanges();
+            //DbContext.Items.Add(item);
+            //DbContext.SaveChanges();
 
+            //return item;
+
+            item.ItemId = default(int);
+            item.ItemName = item.ItemName.Trim();
+            DbContext.Set<Item>().Add(item);
+            int rowsAffected = DbContext.SaveChanges();
             return item;
         }
 

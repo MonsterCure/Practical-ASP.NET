@@ -49,7 +49,6 @@
   <ItemGroup>
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Item.cs" />
-    <Compile Include="Model\OrderStatus.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderItem.cs" />
@@ -60,6 +59,7 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\ItemRepository.cs" />
     <Compile Include="Repository\MenuRepository.cs" />
+    <Compile Include="Repository\OrderRepository.cs" />
     <Compile Include="RestaurantContext.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -50,6 +50,8 @@
     <Compile Include="Model\DtoCategory.cs" />
     <Compile Include="Model\DtoItem.cs" />
     <Compile Include="Model\DtoMenu.cs" />
+    <Compile Include="Model\DtoOrder.cs" />
+    <Compile Include="Model\DtoOrderItem.cs" />
     <Compile Include="Model\MenuType.cs" />
     <Compile Include="Model\OrderStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Service\IService.cs" />
     <Compile Include="Service\ItemService.cs" />
     <Compile Include="Service\MenuService.cs" />
+    <Compile Include="Service\OrderService.cs" />
     <Compile Include="Service\ServiceResult.cs" />
   </ItemGroup>
   <ItemGroup>
