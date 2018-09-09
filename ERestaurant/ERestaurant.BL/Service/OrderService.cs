@@ -9,78 +9,88 @@ namespace ERestaurant.BL.Service
 {
     public class OrderService : BaseService<OrderRepository>, IService<DtoOrder>
     {
-        public ServiceResult<DtoOrder> Add(DtoOrder item)
+        public ServiceResult<DtoOrder> Add(DtoOrder order)
         {
-            try
+            using (var transaction = Context.Database.BeginTransaction())
             {
-                var result = Repository.Create(new Order()
+                try
                 {
-                    //OrderId = 0,
-                    WhenCreated = DateTime.UtcNow,
-                    Table = item.Table,
-                    Comments = item.Comments,
-                    StatusId = (byte)OrderStatus.Created,
-                    ListOrderItems = item.ListOrderItems
-                });
+                    //TODO: Implement validation
+                    var newOrder = new Order
+                    {
+                        OrderId = 0,
+                        StatusId = (byte)OrderStatus.Created,
+                        Table = order.Table,
+                        WhenCreated = DateTime.UtcNow
+                    };
 
-                return new ServiceResult<DtoOrder>()
-                {
-                    Item = new DtoOrder(result),
-                    Success = true
-                };
+                    Context.Orders.Add(newOrder);
+                    Context.SaveChanges();
 
-                //using (var transaction = Repository.DbContext.Database.BeginTransaction())
-                //{
-                //    Repository.DbContext.Orders.Add(new Order
-                //    {
-                //        OrderId = 0,
-                //        StatusId = (byte)OrderStatus.Created,
-                //        Table = item.Table,
-                //        WhenCreated = DateTime.UtcNow
-                //    });
-                //}
-            }
-            catch (Exception ex)
-            {
-                //Log exception
-                return new ServiceResult<DtoOrder>()
+                    Context.OrderItems.AddRange(order.ListOrderItems.Select(o => new OrderItem
+                    {
+                        OrderItemId = 0,
+                        ItemId = o.ItemId,
+                        OrderId = newOrder.OrderId,
+                        ItemQuantity = o.ItemQuantity
+                    }));
+
+                    transaction.Commit();
+
+                    return new ServiceResult<DtoOrder>
+                    {
+                        Success = true,
+                        Item = new DtoOrder(newOrder)
+                    };
+                }
+                catch (Exception ex)
                 {
-                    Success = false,
-                    Exception = ex,
-                    ErrorMessage = ex.Message
-                };
+                    transaction.Rollback();
+                    return new ServiceResult<DtoOrder>
+                    {
+                        Success = false,
+                        Exception = ex,
+                        ErrorMessage = "An exception occurred."
+                    };
+                }
             }
         }
 
         public ServiceResult<DtoOrder> Edit(DtoOrder item)
         {
-            try
+            using (var transaction = Context.Database.BeginTransaction())
             {
-                Repository.Update(new Order()
+                try
                 {
-                    OrderId = item.OrderId,
-                    WhenCreated = item.WhenCreated,
-                    Table = item.Table,
-                    Comments = item.Comments,
-                    StatusId = (byte)item.StatusId,
-                    ListOrderItems = item.ListOrderItems
-                });
+                    Repository.Update(new Order()
+                    {
+                        OrderId = item.OrderId,
+                        WhenCreated = item.WhenCreated,
+                        Table = item.Table,
+                        Comments = item.Comments,
+                        StatusId = (byte)item.StatusId,
+                        //ListOrderItems = item.ListOrderItems
+                    });
 
-                return new ServiceResult<DtoOrder>()
+                    transaction.Commit();
+
+                    return new ServiceResult<DtoOrder>()
+                    {
+                        Success = true
+                    };
+                }
+                catch (Exception ex)
                 {
-                    Success = true
-                };
-            }
-            catch (Exception ex)
-            {
-                //Log exception
-                return new ServiceResult<DtoOrder>()
-                {
-                    Success = false,
-                    Exception = ex,
-                    ErrorMessage = ex.Message
-                };
-            }
+                    //Log exception
+                    transaction.Rollback();
+                    return new ServiceResult<DtoOrder>()
+                    {
+                        Success = false,
+                        Exception = ex,
+                        ErrorMessage = ex.Message
+                    };
+                }
+            }   
         }
 
         public ServiceResult<DtoOrder> Load(DtoOrder item)
@@ -144,7 +154,7 @@ namespace ERestaurant.BL.Service
                     Table = item.Table,
                     Comments = item.Comments,
                     StatusId = (byte)item.StatusId,
-                    ListOrderItems = item.ListOrderItems,
+                    //ListOrderItems = item.ListOrderItems
                 });
 
                 return new ServiceResult<DtoOrder>()

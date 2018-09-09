@@ -23,6 +23,6 @@ namespace ERestaurant.BL.Model
 
         public int ItemId { get; set; }
 
-        public int ItemQuantity { get; set; }
+        public short ItemQuantity { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ERestaurant.Data.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ERestaurant.BL.Model
 {
@@ -18,7 +19,9 @@ namespace ERestaurant.BL.Model
             Table = order.Table;
             Comments = order.Comments;
             StatusId = order.StatusId;
-            ListOrderItems = order.ListOrderItems;
+            ListOrderItems = order.ListOrderItems.Select(loi => new DtoOrderItem(loi)).ToList();
+            TotalCost = order.TotalCost ?? 0;
+            TotalQuantity = order.TotalQuantity ?? 0;
         }
 
         public int OrderId { get; set; }
@@ -31,6 +34,10 @@ namespace ERestaurant.BL.Model
 
         public byte StatusId { get; set; }
 
-        public List<OrderItem> ListOrderItems { get; set; }
+        public List<DtoOrderItem> ListOrderItems { get; set; }
+
+        public double TotalCost { get; set; }
+
+        public int TotalQuantity { get; set; }
     }
 }
