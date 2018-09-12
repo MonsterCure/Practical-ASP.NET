@@ -4,13 +4,13 @@ namespace ERestaurant.Data.Repository
 {
     public class BaseRepository : IDisposable
     {
-        private readonly RestaurantContext _dbContext;
+        private readonly ApplicationDbContext _dbContext; // RestaurantContext
 
-        public RestaurantContext DbContext => _dbContext; //wrapper/auto property
+        public ApplicationDbContext DbContext => _dbContext; //wrapper/auto property // RestaurantContext
 
         public BaseRepository()
         {
-            _dbContext = new RestaurantContext();
+            _dbContext = new ApplicationDbContext(); // RestaurantContext
         }
 
         public void Dispose()

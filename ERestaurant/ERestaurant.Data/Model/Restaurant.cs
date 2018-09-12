@@ -11,5 +11,11 @@ namespace ERestaurant.Data.Model
     {
         [Key]
         public int RestaurantId { get; set; }
+
+        [Required]
+        [MaxLength(200)]
+        public string RestaurantName { get; set; }
+
+        public List<Menu> RestaurantMenus { get; set; }
     }
 }
