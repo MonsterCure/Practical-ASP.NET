@@ -23,6 +23,10 @@ namespace ERestaurant.Data.Model
         public byte StatusId { get; set; }
         //public OrderStatus OrderStatus { get; set; }
 
+        public int RestaurantId { get; set; }
+
+        public Restaurant Restaurant { get; set; }
+
         public List<OrderItem> ListOrderItems { get; set; }
 
         public int? TotalQuantity => ListOrderItems?.Sum(loi => loi.ItemQuantity); // read-only helper properties, have no setters, but are initialized at the declaration, so no need to calculate the values every time they're needed

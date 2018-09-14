@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
+    <Compile Include="ApplicationDbInitializer.cs" />
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Item.cs" />

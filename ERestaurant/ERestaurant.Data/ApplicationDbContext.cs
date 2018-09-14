@@ -16,6 +16,8 @@ namespace ERestaurant.Data
         {
         }
 
+        public DbSet<Restaurant> Restaurants { get; set; }
+
         public DbSet<Menu> Menus { get; set; }
 
         public DbSet<Category> Categories { get; set; }
