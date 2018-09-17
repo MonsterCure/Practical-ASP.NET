@@ -9,10 +9,22 @@ namespace ERestaurant.WebApp.Controllers
 {
     public class MenusController : Controller
     {
+        public MenusController()  
+        {
+ 
+        }
+        
         // GET: Menus
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            return View(new List<DtoMenu>() { 
+                new DtoMenu {
+                    Id = 1,
+                    RestaurantName = "Kikiriki bar",
+                    TypeEnum = MenuType.Meals
+                } 
+            }); 
         }
 
         [HttpGet]
@@ -20,7 +32,9 @@ namespace ERestaurant.WebApp.Controllers
         {
             return View(new DtoMenu
             {
-
+                Id = 1,
+                RestaurantName = "Kikiriki bar",
+                TypeEnum = MenuType.Meals
             });
         }
     }
