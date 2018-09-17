@@ -16,6 +16,9 @@ namespace ERestaurant.WebApp
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            
+            //Seeding the database with initial data
+            //...Service.InitializeDatabase();
         }
     }
 }
