@@ -244,16 +244,6 @@ namespace ERestaurant.Data
 
             context.Items.Add(new Item()
             {
-                ItemName = "Gnocchi ai 4 formaggi",
-                ItemPrice = 190,
-                ItemDescription = "A serving of Gnocchi ai 4 formaggi.",
-                ItemContents = "gnocchi, Gorgonzola cheese, Emmentaler cheese, mozzarella, Parmesan cheese, black pepper",
-                ItemAvailability = true,
-                CategoryId = 3
-            });
-
-            context.Items.Add(new Item()
-            {
                 ItemName = "Cabernet Sauvignon",
                 ItemPrice = 110,
                 ItemDescription = "A 175 ml glass of Cabernet Sauvignon wine.",
@@ -271,17 +261,127 @@ namespace ERestaurant.Data
                 ItemAvailability = true,
                 CategoryId = 4
             });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Club sandwich",
+                ItemPrice = 140,
+                ItemDescription = "Club sandwich with ham.",
+                ItemContents = "toast bread, ham, cheese, lettuce, tomato, cucumber, french fries",
+                ItemAvailability = true,
+                CategoryId = 5
+            });
 
             context.Items.Add(new Item()
             {
-                ItemName = "Merlot",
-                ItemPrice = 115,
-                ItemDescription = "A 175 ml glass of Merlot wine.",
-                ItemContents = "Merlot wine",
+                ItemName = "Pizza sandwich",
+                ItemPrice = 130,
+                ItemDescription = "Pizza sandwich with ham and mushrooms.",
+                ItemContents = "spicy home-made sauce, ham, yellow cheese, mushrooms, peppers, tomatoes, lettuce, olives",
                 ItemAvailability = true,
-                CategoryId = 4
+                CategoryId = 5
             });
-
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Guinness beer",
+                ItemPrice = 210,
+                ItemDescription = "A 300ml glass of Irish dry stout beer.",
+                ItemContents = "Guinness beer",
+                ItemAvailability = true,
+                CategoryId = 6
+            });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Paulaner Dunkel beer",
+                ItemPrice = 280,
+                ItemDescription = "A 300ml glass of German dark lager beer.",
+                ItemContents = "Paulaner Dunkel beer",
+                ItemAvailability = true,
+                CategoryId = 6
+            });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Chocolate cake",
+                ItemPrice = 175,
+                ItemDescription = "A piece of chocolate cake.",
+                ItemContents = "chocolate, flour, eggs, milk, cream, sugar, whipped cream",
+                ItemAvailability = true,
+                CategoryId = 7
+            });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Hazelnut mousse",
+                ItemPrice = 165,
+                ItemDescription = "A serving of hazelnut mousse.",
+                ItemContents = "chocolate, hazelnuts, eggs, milk, cream, sugar, whipped cream",
+                ItemAvailability = true,
+                CategoryId = 7
+            });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Pinot Noir",
+                ItemPrice = 125,
+                ItemDescription = "A 175 ml glass of Pinot Noir wine.",
+                ItemContents = "Pinot Noir wine",
+                ItemAvailability = true,
+                CategoryId = 8
+            });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Syrah",
+                ItemPrice = 135,
+                ItemDescription = "A 175 ml glass of Syrah wine.",
+                ItemContents = "Syrah wine",
+                ItemAvailability = false,
+                CategoryId = 8
+            });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Stellato pizza",
+                ItemPrice = 320,
+                ItemDescription = "Stellato pizza.",
+                ItemContents = "ham, cheese, mushrooms, tomato sauce, oregano, sour cream",
+                ItemAvailability = true,
+                CategoryId = 9
+            });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Quattro stagioni pizza",
+                ItemPrice = 360,
+                ItemDescription = "Quattro stagioni pizza.",
+                ItemContents = "ham, cheese, mushrooms, olives, prosciutto, bacon, tomato sauce, oregano",
+                ItemAvailability = true,
+                CategoryId = 9
+            });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Coca-Cola",
+                ItemPrice = 80,
+                ItemDescription = "A 250ml bottle of Coca-Cola.",
+                ItemContents = "Coca-Cola",
+                ItemAvailability = true,
+                CategoryId = 10
+            });
+            
+            context.Items.Add(new Item()
+            {
+                ItemName = "Sprite",
+                ItemPrice = 80,
+                ItemDescription = "A 250ml bottle of Sprite.",
+                ItemContents = "Sprite",
+                ItemAvailability = true,
+                CategoryId = 10
+            });
+            
             base.Seed(context);
         }
     }
