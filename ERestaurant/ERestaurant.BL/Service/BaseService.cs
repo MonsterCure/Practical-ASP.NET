@@ -16,6 +16,11 @@ namespace ERestaurant.BL.Service
         {
             _repository = Activator.CreateInstance<T>(); //used to create instances of generic types
         }
+        
+        public static void InitializeDatabase()
+        {
+            BaseRepository.InitializeDatabase();
+        }
 
         public void Dispose()
         {
