@@ -14,6 +14,13 @@ namespace ERestaurant.Data
         public ApplicationDbContext()
             : base("name=RestaurantConnection", throwIfV1Schema: false) // RestaurantConnection or DefaultConnection
         {
+            Database.SetInitializer<ApplicationDbContext>(new ApplicationDbInitializer());
+            //Database.Create();
+        }
+
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
         }
 
         public DbSet<Restaurant> Restaurants { get; set; }
@@ -27,11 +34,11 @@ namespace ERestaurant.Data
         public DbSet<Order> Orders { get; set; }
 
         public DbSet<OrderItem> OrderItems { get; set; }
-
-        public static ApplicationDbContext Create()
-        {
-            return new ApplicationDbContext();
-        }
+        
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //     base.OnModelCreating(modelBuilder);
+        //}
     }
 
     //public class RestaurantContext : DbContext
