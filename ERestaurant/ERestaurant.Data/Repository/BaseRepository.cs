@@ -13,6 +13,11 @@ namespace ERestaurant.Data.Repository
             _dbContext = new ApplicationDbContext(); // RestaurantContext
         }
 
+        public static void InitializeDatabase()
+        {
+            Database.SetInitializer(new ApplicationDbInitializer());
+        }
+        
         public void Dispose()
         {
             _dbContext?.Dispose();
