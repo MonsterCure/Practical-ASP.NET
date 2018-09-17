@@ -22,10 +22,18 @@ namespace ERestaurant.WebApp
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                      "~/Scripts/jquery-ui-1.12.1.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-united.css",
                       "~/Content/site.css"));
+            
+            bundles.Add(new StyleBundle("~/Content/themes/base/jqueryui").Include(
+                      "~/Content/themes/base/jquery-ui.css"));
+            
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
