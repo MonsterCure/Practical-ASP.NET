@@ -18,7 +18,7 @@ namespace ERestaurant.WebApp
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             
             //Seeding the database with initial data
-            //...Service.InitializeDatabase();
+            //BaseService.InitializeDatabase();
         }
     }
 }
