@@ -23,7 +23,8 @@ namespace ERestaurant.BL.Service
                 var result = Repository.Create(new Menu()
                 {
                     TypeId = (byte)item.TypeEnum,
-                    RestaurantName = item.RestaurantName
+                    RestaurantId = item.RestaurantId,
+                    //MenuCategories = item.MenuCategories.Select(mc => new Category(mc)).ToList()
                 });
 
                 return new ServiceResult<DtoMenu>()
@@ -51,7 +52,7 @@ namespace ERestaurant.BL.Service
                 Repository.Update(new Menu()
                 {
                     TypeId = (byte)item.TypeEnum,
-                    RestaurantName = item.RestaurantName
+                    //RestaurantName = item.RestaurantName
                 });
 
                 return new ServiceResult<DtoMenu>()
@@ -128,7 +129,7 @@ namespace ERestaurant.BL.Service
                 Repository.Delete(new Menu()
                 {
                     TypeId = (byte)item.TypeEnum,
-                    RestaurantName = item.RestaurantName
+                    //RestaurantName = item.RestaurantName
                 });
 
                 return new ServiceResult<DtoMenu>()

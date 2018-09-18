@@ -23,12 +23,12 @@ namespace ERestaurant.Data
             return new ApplicationDbContext();
         }
         
-        public Database Database => base.Database; 
+        //public Database Database => base.Database;
 
-        public int SaveChanges() 
-        { 
-            return base.SaveChanges(); 
-        } 
+        //public int SaveChanges() 
+        //{ 
+        //    return base.SaveChanges(); 
+        //}
 
         public DbSet<Restaurant> Restaurants { get; set; }
 

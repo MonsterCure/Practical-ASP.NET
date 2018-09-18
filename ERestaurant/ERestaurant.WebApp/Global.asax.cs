@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ERestaurant.BL.Service;
+using ERestaurant.Data.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,13 +15,13 @@ namespace ERestaurant.WebApp
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-            GlobalConfiguration.Configure(WebApiConfig.Register);
+            //GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             
             //Seeding the database with initial data
-            //BaseService.InitializeDatabase();
+            BaseService<BaseRepository>.InitializeDatabase();
         }
     }
 }

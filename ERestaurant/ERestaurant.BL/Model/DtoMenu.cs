@@ -1,4 +1,5 @@
 ﻿using ERestaurant.Data.Model;
+using System.Collections.Generic;
 
 namespace ERestaurant.BL.Model
 {
@@ -13,13 +14,15 @@ namespace ERestaurant.BL.Model
         {
             MenuId = menu.MenuId;
             TypeEnum = (MenuType)menu.TypeId;
-            RestaurantName = menu.RestaurantName;
+            RestaurantId = menu.RestaurantId;
         }
 
         public int MenuId { get; set; }
 
         public MenuType TypeEnum { get; set; }
 
-        public string RestaurantName { get; set; }
+        public int RestaurantId { get; set; }
+
+        public List<DtoCategory> MenuCategories { get; set; }
     }
 }

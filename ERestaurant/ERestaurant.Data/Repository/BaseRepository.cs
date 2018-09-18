@@ -1,16 +1,17 @@
 ﻿using System;
+using System.Data.Entity;
 
 namespace ERestaurant.Data.Repository
 {
     public class BaseRepository : IDisposable
     {
-        private readonly ApplicationDbContext _dbContext; // RestaurantContext
+        private readonly ApplicationDbContext _dbContext;
 
-        public ApplicationDbContext DbContext => _dbContext; //wrapper/auto property // RestaurantContext
+        public ApplicationDbContext DbContext => _dbContext; //wrapper/auto property
 
         public BaseRepository()
         {
-            _dbContext = new ApplicationDbContext(); // RestaurantContext
+            _dbContext = new ApplicationDbContext();
         }
 
         public static void InitializeDatabase()

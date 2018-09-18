@@ -30,7 +30,7 @@ namespace ERestaurant.Data.Repository
         {
             var dbItem = DbContext.Menus.Single(menuItem => menuItem.MenuId == menu.MenuId);
             dbItem.TypeId = menu.TypeId;
-            dbItem.RestaurantName = menu.RestaurantName;
+            //dbItem.RestaurantName = menu.RestaurantName;
             DbContext.Entry(dbItem).State = EntityState.Modified;
             DbContext.SaveChanges();
         }

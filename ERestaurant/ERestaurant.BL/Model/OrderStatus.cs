@@ -1,4 +1,6 @@
-﻿namespace ERestaurant.BL.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ERestaurant.BL.Model
 {
     public enum OrderStatus
     {
@@ -6,6 +8,7 @@
 
         Created = 1,
 
+        [Display(Name ="In progress")]
         InProgress = 2,
 
         Prepared = 3,

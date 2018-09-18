@@ -1,4 +1,4 @@
-@model ERestaurant.BL.Model.DtoMenu; 
+@model ERestaurant.BL.Model.DtoMenu
  
 @{
     ViewBag.Title = "Details";
@@ -14,10 +14,12 @@
 <hr /> 
 <dl class="dl-horizontal"> 
     <dt>
-        @Html.DisplayNameFor(model => model.RestaurantName) 
+        @Html.DisplayNameFor(model => model.RestaurantId)
+        @Html.DisplayNameFor(model => model.TypeEnum)
     </dt> 
-    <dd> 
-        @Html.DisplayFor(model => model.RestaurantName) 
+    <dd>
+        @Html.DisplayFor(model => model.RestaurantId)
+        @Html.DisplayFor(model => model.TypeEnum)
     </dd> 
 </dl> 
  

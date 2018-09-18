@@ -16,10 +16,6 @@ namespace ERestaurant.Data.Model
 
         public Restaurant Restaurant { get; set; }
 
-        //[Required]
-        //[MaxLength(200)]
-        //public string RestaurantName { get; set; }
-
         public List<Category> MenuCategories { get; set; }
     }
 }
