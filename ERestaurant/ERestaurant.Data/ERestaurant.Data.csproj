@@ -93,6 +93,7 @@
     <Compile Include="Repository\ItemRepository.cs" />
     <Compile Include="Repository\MenuRepository.cs" />
     <Compile Include="Repository\OrderRepository.cs" />
+    <Compile Include="Repository\RestaurantRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
